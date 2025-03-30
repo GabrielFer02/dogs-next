@@ -30,18 +30,11 @@ export function USER_POST() {
   };
 }
 
-// export function PHOTO_POST(formData, token) {
-//   return {
-//     url: API_URL + '/api/photo',
-//     options: {
-//       method: 'POST',
-//       headers: {
-//         Authorization: 'Bearer ' + token,
-//       },
-//       body: formData,
-//     },
-//   };
-// }
+export function PHOTO_POST() {
+  return {
+    url: API_URL + '/api/photo',
+  };
+}
 
 // export function PHOTOS_GET({ page, total, user }) {
 //   return {
