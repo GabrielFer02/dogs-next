@@ -1,5 +1,13 @@
-export default async function ContaPage() {
-  return <main>
-    <h1>Conta</h1>
-  </main>
+'use client';
+import { useUserContext } from '@/context/user-context';
+import React from 'react';
+
+export default function ContaPage() {
+  const { user } = useUserContext();
+
+  return (
+    <main>
+      <h1>Conta</h1>
+    </main>
+  );
 }
