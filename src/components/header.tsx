@@ -1,10 +1,21 @@
+'use client'
+
 import Link from 'next/link';
 import styles from './header.module.css';
 import Image from 'next/image';
-import userGet from '@/actions/user-get';
+import userGet, { User } from '@/actions/user-get';
+import React from 'react';
 
-export default async function Header() {
-  const { data } = await userGet();
+export default  function Header() {
+  const [infos, setInfos] = React.useState<User | null>(null)
+  
+  React.useEffect(() => {
+    (async () => {
+      const { data } = await userGet();
+      setInfos(data as User)
+    })()
+   
+  },[])
 
   return (
     <header className={styles.header}>
@@ -18,9 +29,9 @@ export default async function Header() {
             priority
           />
         </Link>
-        {data ? (
+        {infos ? (
           <Link className={styles.login} href='/conta'>
-            {data.username}
+            {infos.username}
           </Link>
         ) : (
           <Link className={styles.login} href='/login'>
