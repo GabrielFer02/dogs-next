@@ -3,6 +3,8 @@
 import photosGet, { Photo } from '@/actions/photo-get';
 import FeedPhotos from './feed-photos';
 import React from 'react';
+import Loading from '@/components/helper/loading';
+import style from './feed.module.css';
 
 export default function Feed({
   photos,
@@ -19,6 +21,7 @@ export default function Feed({
   );
 
   const fetching = React.useRef(false);
+
   function infiniteScroll() {
     if (fetching.current) return;
     fetching.current = true;
@@ -67,7 +70,9 @@ export default function Feed({
   return (
     <div>
       <FeedPhotos photos={photosFeed} />
-      {loading && <p>Carregando...</p>}
+      <div className={style.loadingWrapper}>
+        {infinite ? loading && <Loading /> : <p>Não existem mais postagens</p>}
+      </div>
     </div>
   );
 }
