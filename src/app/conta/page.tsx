@@ -17,9 +17,9 @@ export default async function ContaPage() {
   const resolvedPhoto = data as Photo[] | null;
 
   return (
-    <main>
+    <section>
       {resolvedPhoto?.length ? (
-        <Feed photos={resolvedPhoto} />
+        <Feed photos={resolvedPhoto} user={resolvedUser?.username} />
       ) : (
         <div>
           <p
@@ -36,6 +36,6 @@ export default async function ContaPage() {
           </Link>
         </div>
       )}
-    </main>
+    </section>
   );
 }
