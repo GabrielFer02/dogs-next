@@ -1,4 +1,4 @@
-import photosGet, { Photo } from '@/actions/photo-get';
+import photosGet, { Photo } from '@/actions/photos-get';
 import userGet, { User } from '@/actions/user-get';
 import Feed from '@/components/Feed/feed';
 import { Metadata } from 'next';

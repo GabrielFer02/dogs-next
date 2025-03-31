@@ -1,4 +1,4 @@
-import photosGet, { Photo } from '@/actions/photo-get';
+import photosGet, { Photo } from '@/actions/photos-get';
 import Feed from '@/components/Feed/feed';
 
 export default async function Home() {

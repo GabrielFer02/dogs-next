@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { Photo } from '@/actions/photo-get';
+import { Photo } from '@/actions/photos-get';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from './feed.module.css';
 
-export default  function FeedPhotos({ photos }: { photos: Photo[] }) {
+export default function FeedPhotos({ photos }: { photos: Photo[] }) {
   return (
     <ul className={`${style.feed} animeLeft`}>
       {photos.map((photo, i) => (
