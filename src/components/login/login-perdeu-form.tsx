@@ -1,10 +1,10 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/forms/button';
 import Input from '@/components/forms/input';
 import ErrorMessage from '../helper/error-message';
-import React from 'react';
+import React, { useActionState } from 'react';
 import passwordLost from '@/actions/password-lost';
 
 function FormButton() {
@@ -22,7 +22,7 @@ function FormButton() {
 }
 
 export default function LoginPerdeuForm() {
-  const [state, action] = useFormState(passwordLost, {
+  const [state, action] = useActionState(passwordLost, {
     ok: false,
     error: '',
     data: null,

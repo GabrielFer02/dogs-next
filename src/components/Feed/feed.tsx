@@ -20,7 +20,6 @@ export default function Feed({
 
   const fetching = React.useRef(false);
   function infiniteScroll() {
-    console.log('aconteceu');
     if (fetching.current) return;
     fetching.current = true;
     setLoading(true);
@@ -43,6 +42,7 @@ export default function Feed({
       if (actionData && actionData.data !== null) {
         const { data } = actionData;
         const resolvedPhotos = data as Photo[];
+
         setPhotosFeed(currentPhotos => [...currentPhotos, ...resolvedPhotos]);
         if (resolvedPhotos.length < 6) setInfinite(false);
       }

@@ -1,10 +1,10 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/forms/button';
 import Input from '@/components/forms/input';
 import ErrorMessage from '../helper/error-message';
-import React from 'react';
+import React, { useActionState } from 'react';
 import userPost from '@/actions/user-post';
 
 function FormButton() {
@@ -22,7 +22,7 @@ function FormButton() {
 }
 
 export default function LoginCriarForm() {
-  const [state, action] = useFormState(userPost, {
+  const [state, action] = useActionState(userPost, {
     ok: false,
     error: '',
     data: null,
