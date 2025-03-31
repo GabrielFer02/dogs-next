@@ -1,12 +1,13 @@
-import photosGet from '@/actions/photo-get';
+import photosGet, { Photo } from '@/actions/photo-get';
 import Feed from '@/components/Feed/feed';
 
 export default async function Home() {
-  const data = await photosGet();
+  const { data } = await photosGet({});
+  const resolvedPhotos = data as Photo[];
 
   return (
     <section className='container mainContainer'>
-      <Feed photos={data} />
+      <Feed photos={resolvedPhotos} />
     </section>
   );
 }
