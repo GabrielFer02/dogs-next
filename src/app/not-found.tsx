@@ -7,7 +7,7 @@ export default function NotFound() {
       <Link
         className='button'
         style={{ marginBottom: '1rem', display: 'inline-block' }}
-        href={'/'}
+        href='/'
       >
         Home
       </Link>
